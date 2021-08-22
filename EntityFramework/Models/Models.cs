@@ -20,4 +20,11 @@ namespace EntityFramework.Models
         }
         protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlite($"Data Source={DbPath}");
     }
+    public class CommonFields
+    {
+        public DateTime Updated { get; set; } = System.DateTime.Now;
+        public Subject UpdatedBy { get; set; }
+        public DateTime Created { get; set; }
+        public Subject CreatedBy { get; set; }
+    }
 }
